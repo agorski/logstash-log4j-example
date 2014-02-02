@@ -18,34 +18,31 @@ java -jar logstash-1.3.3-flatjar.jar agent -f logstash-log4j.conf -- web
 ## Execute Unit Test
 
 One Unit Test execution creates2 Log Events:
-    * simple with a map
+* simple with a map
 
-    "msg" : {
-            "first-name" : "Albert",
-             "last-name" : "Gorski",
-             "city" :"Berlin"
-            }
-
-
-    * and complex (a map which incudes a map):
-
-    "msg":
-        {"customer" : {
-            "first-name" : "Albert",
-            "last-name" : "Gorski",
-            "city" : "Berlin"
-            }
+"msg" : {
+        "first-name" : "Albert",
+         "last-name" : "Gorski",
+         "city" :"Berlin"
         }
+
+
+* and complex (a map which incudes a map):
+
+"msg":
+    {"customer" : {
+        "first-name" : "Albert",
+        "last-name" : "Gorski",
+        "city" : "Berlin"
+        }
+    }
 
 
 ## Look at Kibana frontend to see log events
 http://localhost:9292/index.html#/dashboard/file/logstash.json
 
-
 # Query Kibana
 
 Now you can query JSON messages in Kibana like:
-    * simple:
-        msg.city:Berlin
-    * complex analog:
-        msg.customer.city:Berlin
+* simple: msg.city:Berlin
+* complex analog: msg.customer.city:Berlin
