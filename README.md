@@ -15,7 +15,7 @@ Logstash is packed as a simple JAR file including:
 
 ## Download logstash
 from http://logstash.net
-*into the project directory called "logstash"
+* into the project directory called "logstash"
 * or anywhere you want but then use a config file from "logstash" directory
 
 ## Start logstash (here example for version 1.3.3)
