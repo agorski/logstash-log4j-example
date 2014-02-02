@@ -2,21 +2,26 @@ logstash-log4j-example
 ======================
 
 # Description
-An example of a java maven application which logs to logstash. Logstash is configured with log4j input. Send message is json type and is filtered/parsed. All send to embedded Elasticsearch.
+An example of a java maven application which logs to logstash. Logstash is configured with log4j input.
+Sent message is json type and it's content is filtered/parsed and mutated (some fields are stripped from oryginal message).
+After filter and mutate, final json is send to embedded Elasticsearch.
 
-# Prepare
+Logstash is packed as a simple JAR file including:
+* logstash
+* embedded Elasticsearch storage
+* nice frontend called Kibana
 
-Logstash is packed as a simple JAR file including: logstash, embedded Elasticsearch storage and nice frontend called Kibana.
+# Steps
 
-Download logstash
+## Download logstash
 from http://logstash.net
-into the project directory called "logstash" or anywhere you want but then use a config file from "logstash" directory.
+*into the project directory called "logstash"
+* or anywhere you want but then use a config file from "logstash" directory
 
 ## Start logstash (here example for version 1.3.3)
 java -jar logstash-1.3.3-flatjar.jar agent -f logstash-log4j.conf -- web
 
 ## Execute Unit Test
-
 One Unit Test execution creates2 Log Events:
 * simple with a map
 
