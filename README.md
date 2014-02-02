@@ -22,18 +22,21 @@ from http://logstash.net
 java -jar logstash-1.3.3-flatjar.jar agent -f logstash-log4j.conf -- web
 
 ## Execute Unit Test
-One Unit Test execution creates2 Log Events:
-* simple with a map
+start terminal, go to project directory and execute following command:
+<tt>mvn test</tt>
 
+One Unit Test execution creates 2 Log Events:
+* simple with a map
+<tt>
 "msg" : {
         "first-name" : "Albert",
          "last-name" : "Gorski",
          "city" :"Berlin"
         }
-
+</tt>
 
 * and complex (a map which incudes a map):
-
+<tt>
 "msg":
     {"customer" : {
         "first-name" : "Albert",
@@ -41,7 +44,7 @@ One Unit Test execution creates2 Log Events:
         "city" : "Berlin"
         }
     }
-
+</tt>
 
 ## Look at Kibana frontend to see log events
 http://localhost:9292/index.html#/dashboard/file/logstash.json
@@ -49,5 +52,5 @@ http://localhost:9292/index.html#/dashboard/file/logstash.json
 # Query Kibana
 
 Now you can query JSON messages in Kibana like:
-* simple: msg.city:Berlin
-* complex analog: msg.customer.city:Berlin
+* simple: <tt>msg.city:Berlin</tt>
+* complex analog: <tt>msg.customer.city:Berlin</tt>
